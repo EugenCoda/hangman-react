@@ -8,7 +8,7 @@ import Notification from "./components/Notification";
 import Popup from "./components/Popup";
 import { show } from "./helpers/helpers";
 
-const words = ["mister", "smartphone", "history", "yogurt"];
+const words = ["mister", "smartphone", "history", "yogurt", "element"];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 function App() {
@@ -47,6 +47,14 @@ function App() {
 
     return () => window.removeEventListener("keydown", handleKeydown);
   }, [playable, correctLetters, wrongLetters]);
+
+  function playAgain() {
+    setPlayable(true);
+    setCorrectLetters([]);
+    setWrongLetters([]);
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+  }
+
   return (
     <>
       <Header />
@@ -60,6 +68,8 @@ function App() {
         selectedWord={selectedWord}
         correctLetters={correctLetters}
         wrongLetters={wrongLetters}
+        setPlayable={setPlayable}
+        playAgain={playAgain}
       />
     </>
   );

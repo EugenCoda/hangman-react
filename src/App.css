@@ -47,8 +47,8 @@ h1 {
   display: flex;
   position: absolute;
   bottom: 0;
-  left: 30%;
-  /* transform: translateX(-50%); */
+  left: 45%;
+  transform: translateX(-35%);
 }
 
 .word span {
@@ -77,4 +77,43 @@ h1 {
 
 .notification-container.show {
   transform: translateY(-50px);
+}
+
+.popup-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+
+  color: rgb(224, 225, 168);
+  background-color: blue;
+  height: 200px;
+  transform: translateY(-300px);
+}
+
+.popup-container h2 {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.popup-container button {
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  color: blue;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.popup-container button:active {
+  transform: scale(0.98);
+}
+
+.popup-container button:focus {
+  outline: none;
 }
